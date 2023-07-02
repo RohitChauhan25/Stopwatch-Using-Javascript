@@ -2,11 +2,13 @@ const timer = document.getElementById('stopwatch')
 var hr = 0
 var min = 0
 var sec = 0
+
 var stoptime = true
 
 function startTimer() {
   if (stoptime == true) {
     stoptime = false
+    // below line for change box-shadow for diaplay stopwatch container
     timer.style.boxShadow = '0px 0px 10px greenyellow'
     timerCycle()
   }
@@ -14,6 +16,7 @@ function startTimer() {
 function stopTimer() {
   if (stoptime == false) {
     stoptime = true
+    // below line for change box-shadow for diaplay stopwatch container
     timer.style.boxShadow = '0px 0px 10px red'
   }
 }
@@ -48,6 +51,7 @@ function timerCycle() {
 
     timer.innerHTML = hr + ':' + min + ':' + sec
 
+    // repeat timerCycle funtion after every 1 sec
     setTimeout('timerCycle()', 1000)
   }
 }
@@ -57,5 +61,6 @@ function resetTimer() {
   hr = 0
   sec = 0
   min = 0
+  // below line for change box-shadow for diaplay stopwatch container
   timer.style.boxShadow = '0px 0px 10px black'
 }
