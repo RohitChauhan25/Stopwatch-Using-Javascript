@@ -1,4 +1,4 @@
-const timer = document.getElementById('stopwatch')
+const timer = document.getElementById('displayTimer')
 var hr = 0
 var min = 0
 var sec = 0
@@ -13,6 +13,7 @@ function startTimer() {
     timerCycle()
   }
 }
+
 function stopTimer() {
   if (stoptime == false) {
     stoptime = true
@@ -33,6 +34,7 @@ function timerCycle() {
       min = min + 1
       sec = 0
     }
+
     if (min == 60) {
       hr = hr + 1
       min = 0
@@ -42,9 +44,11 @@ function timerCycle() {
     if (sec < 10) {
       sec = '0' + sec
     }
+
     if (min < 10) {
       min = '0' + min
     }
+
     if (hr < 10) {
       hr = '0' + hr
     }
@@ -55,6 +59,7 @@ function timerCycle() {
     setTimeout('timerCycle()', 1000)
   }
 }
+
 function resetTimer() {
   timer.innerHTML = '00:00:00'
   stoptime = true
